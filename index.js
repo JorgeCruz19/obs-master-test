@@ -5,13 +5,13 @@ let selectedChannel =
 let [channel] = selectedChannel;
 
 if (channel == "canal1") {
-	bodyEl.style.backgroundImage = "url('./media/TELEVICENTRO.gif')";
+	bodyEl.style.backgroundImage = "url('./media/background.jpeg')";
 } else if (channel == "canal2") {
-	bodyEl.style.backgroundImage = "url('./media/TELEVICENTRO.gif')";
+	bodyEl.style.backgroundImage = "url('./media/background.jpeg')";
 } else if (channel == "canal3") {
-	bodyEl.style.backgroundImage = "url('./media/TELEVICENTRO.gif')";
+	bodyEl.style.backgroundImage = "url('./media/background.jpeg')";
 } else if (channel == "canal4") {
-	bodyEl.style.backgroundImage =	"url('./media/TELEVICENTRO.gif')";
+	bodyEl.style.backgroundImage =	"url('./media/background.jpeg')";
 } else {
 	bodyEl.style.background = "rgb(17, 24, 39)";
 }
