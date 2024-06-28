@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Canal 3</title>
+    <link rel="icon" type="image/png" sizes="32x32" href="./media/televicentro-favicon.png" />
+</head>
+
+<style>
+    body{
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+    }
+    iframe{
+        width: 100%;
+        height: 100vh;
+        border: none;
+        overflow: hidden;
+    }
+</style>
+
+<body>
+</body>
+<script type="module">
+    import { getApp, initializeApp } from "https://www.gstatic.com/firebasejs/9.6.8/firebase-app.js"
+    import { getDatabase, ref, onValue } from "https://www.gstatic.com/firebasejs/9.6.8/firebase-database.js"
+
+    let app;
+    let url;
+    try {
+        app = getApp();
+    } catch (error) {
+        app = initializeApp({
+            apiKey: "AIzaSyC6u8xO9RBzGIT8Yi4w7G5zQNyGb8UXnAE",
+            authDomain: "tvclive-fa3ba.firebaseapp.com",
+            databaseURL: "https://tvclive-fa3ba-default-rtdb.firebaseio.com",
+            projectId: "tvclive-fa3ba",
+            storageBucket: "tvclive-fa3ba.appspot.com",
+            messagingSenderId: "372405973436",
+            appId: "1:372405973436:web:2423ff3dc3cda81c0a3bb9"
+        });
+    }
+    const db = getDatabase(app);
+    const urlAdminRef = ref(db, 'url/url');
+
+    onValue(urlAdminRef, (snapshot) => {
+        url= snapshot.val();
+        window.location.replace(`${url}/?scene&room=canal3&sl&vb=5000`)
+    });
+
+</script>
+
+</html>
